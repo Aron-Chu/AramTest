@@ -1,0 +1,32 @@
+/* styles/globals.css */
+
+/* Reset margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Set a dark background for the whole page */
+  html,
+  body {
+    background-color: #2f2f2f; /* A dark gray, adjust to taste (#141414, #1f1f1f, etc.) */
+    color: #ffffff;            /* White text for contrast */
+    font-family: sans-serif;   /* Or use a custom web font if you prefer */
+    font-size: 16px;
+    height: 100%;
+  }
+  
+  a {
+    color: #4eb4ff; 
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+  }
+  a:hover {
+    color: #85d7ff;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+  }
+  
