@@ -86,3 +86,36 @@ export async function fetchMatchDetail(matchId: string) {
   const matchData = await response.json()
   return matchData
 }
+
+/**
+ * Fetch match IDs for a player by queue type.
+ */
+export async function fetchMatchesByPuuid(
+  puuid: string,
+  count: number = 10,
+  queueType: string = 'ARAM'
+) {
+  if (queueType === 'ARAM') {
+    return fetchAramMatchIdsByPuuid(puuid, count)
+  }
+  return fetchAramMatchIdsByPuuid(puuid, count)
+}
+
+/**
+ * Fetch champion roster from Riot's Data Dragon static data.
+ */
+export async function getAllChampionsFromRiot() {
+  const versionsRes = await fetch('https://ddragon.leagueoflegends.com/api/versions.json')
+  const versions = (await versionsRes.json()) as string[]
+  const latest = versions[0]
+
+  const response = await fetch(
+    `https://ddragon.leagueoflegends.com/cdn/${latest}/data/en_US/champion.json`
+  )
+
+  if (!response.ok) {
+    throw new Error('Failed to fetch champion data from Data Dragon')
+  }
+
+  return response.json()
+}
