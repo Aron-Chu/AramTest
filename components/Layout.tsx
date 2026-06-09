@@ -12,7 +12,7 @@ export default function Layout({ children }: LayoutProps) {
     <div className="min-h-screen bg-gray-900 text-white flex flex-col">
       {/* Header / Nav Bar */}
       <header className="bg-gray-800 p-4 flex items-center justify-between">
-        <Link href="/">
+        <Link href="/" legacyBehavior>
           <a className="text-2xl font-bold text-white hover:text-gray-300">
             ARAM Stats
           </a>
@@ -20,12 +20,12 @@ export default function Layout({ children }: LayoutProps) {
         <nav>
           <ul className="flex space-x-4">
             <li>
-              <Link href="/leaderboard">
+              <Link href="/leaderboard" legacyBehavior>
                 <a className="hover:text-gray-300">Leaderboard</a>
               </Link>
             </li>
             <li>
-              <Link href="/champions">
+              <Link href="/champions" legacyBehavior>
                 <a className="hover:text-gray-300">Champions</a>
               </Link>
             </li>

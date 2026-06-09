@@ -52,7 +52,12 @@ async function syncChampions() {
   const riotChampions = await getAllChampionsFromRiot() 
   // Format or transform data if necessary
   // e.g. riotChampions might have data in { data: { Aatrox: { ... }, ... } }
-  const championArray = Object.values(riotChampions.data)
+  const championArray = Object.values(riotChampions.data) as Array<{
+    key: string
+    id: string
+    name: string
+    title?: string
+  }>
 
   // Upsert logic (if champion doesn't exist, create it; if exists, update)
   for (const champ of championArray) {

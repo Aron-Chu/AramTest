@@ -4,7 +4,7 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import dbConnect from '../../lib/dbConnect'
 import MatchModel from '../../models/MatchModel'
 import SummonerModel from '../../models/SummonerModel'
-import { fetchMatchesByPuuid } from '../../lib/riotApi'
+import { fetchMatchDetail, fetchMatchesByPuuid } from '../../lib/riotApi'
 import { computeAramScore } from '../../lib/computeAramScore'
 
 export default async function handler(
